@@ -522,30 +522,45 @@ function initSwiper() {
 }
 
 function init() {
-  switch (global.currentPage) {
-    case '/':
-    case '/index.html':
-      hilightActiveLink(moviesLink)
-      displayMovieSwiper()
-      diplayPopularMovies()
-      break
-    case '/shows.html':
-      console.log('TV shows Page');
-      hilightActiveLink(tvShowsLink)
-      displayShowSwiper()
-      diplayPopularShows()
-      break;
-    case '/movie-details.html':
-      movieDetails()
-      break;
-    case '/tv-details.html':
-      // console.log('TV show Details Page');
-      showDetails()
-      break;
-    case '/search.html':
-      search()
-      break;
+
+  const page = global.currentPage
+  // console.log(page);
+
+  if (["/", "/index.html"].includes(page)) {
+    console.log('Home Page');
+  }else if (page.includes("shows")) {
+    console.log('tv show page');
+  } else if (page.includes("movie-details")) {
+    console.log('movie details Page');
+  } else if (page.includes("tv-details")) {
+    console.log('tv details Page');
+  } else if (page.includes("search")) {
+    console.log('search Page');
   }
+  // switch (global.currentPage) {
+  //   case '/':
+  //   case '/index.html':
+  //     hilightActiveLink(moviesLink)
+  //     displayMovieSwiper()
+  //     diplayPopularMovies()
+  //     break
+  //   case '/shows.html':
+  //     console.log('TV shows Page');
+  //     hilightActiveLink(tvShowsLink)
+  //     displayShowSwiper()
+  //     diplayPopularShows()
+  //     break;
+  //   case '/movie-details.html':
+  //     movieDetails()
+  //     break;
+  //   case '/tv-details.html':
+  //     // console.log('TV show Details Page');
+  //     showDetails()
+  //     break;
+  //   case '/search.html':
+  //     search()
+  //     break;
+  // }
 }
 
 document.addEventListener('DOMContentLoaded', init)
