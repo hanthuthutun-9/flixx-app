@@ -528,14 +528,23 @@ function init() {
 
   if (["/", "/index.html"].includes(page)) {
     console.log('Home Page');
+    hilightActiveLink(moviesLink)
+    displayMovieSwiper()
+    diplayPopularMovies()
   }else if (page.includes("shows")) {
     console.log('tv show page');
+    hilightActiveLink(tvShowsLink)
+    displayShowSwiper()
+    diplayPopularShows()
   } else if (page.includes("movie-details")) {
     console.log('movie details Page');
+    movieDetails()
   } else if (page.includes("tv-details")) {
     console.log('tv details Page');
+    showDetails()
   } else if (page.includes("search")) {
     console.log('search Page');
+    search()
   }
   // switch (global.currentPage) {
   //   case '/':
